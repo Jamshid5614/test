@@ -1,0 +1,51 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Cars documentation",
+        "description": "simple car api documentation",
+        "version": "1.0.0"
+    },
+    "host":"http://localhost:3001",
+    "basePath": "/",
+    "tags": [],
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "securityDefinition": {
+        "apiKeyAuth": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "authorization",
+            "description": "Compy and paste token in here"
+        }
+    },
+    "consumes": [],
+    "produces": [] ,
+    "paths": {
+        "/api/new": {
+            "post": {
+                "tags": [],
+                "description": "create new car",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "create new car params",
+                        "schema": {
+                            "$ref": "#/definitions/CREATE_CAR"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "response body",
+                        "schema": {
+                            "$ref": "#/definitions/CREATE_CAR_RESPONSE"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
